@@ -1,18 +1,24 @@
-class User: 
-    bank_name = "Cardano Bank"
+class User:
     def __init__(self):
         self.name = "Anna"
         self.email = "annaefitzgerald@gmail.com"
         self.account_balance = 0
-        
+    
     def make_deposit(self, amount):
         self.account_balance += amount
+        #issues with initialization
+        return self
     
     def make_withdrawal(self, amount):
         self.account_balance -= amount
         
-    def display_user_balance(self, balance):
-        self.account_balance = balance
+        return self
+    
+    def display_user_balance(self):
+        print(self.account_balance)
+        
+        return self
+        
     #bonus add transfer_money()
         #user1 transfers to user3
         #print both user balances
@@ -29,7 +35,6 @@ frankie.name = "Frankie"
 print(frankie.name)
 fiore.name = "Fiore"
 print(fiore.name)
-
 
 User()
 lola=User()
@@ -60,26 +65,16 @@ print(checkers.name)
 
 #have first user make 3 deposits and 1 withdrawal
 #display balance
-frankie.make_deposit(4000)
-frankie.make_deposit(2500)
-frankie.make_deposit(9800)
-frankie.make_withdrawal(1100)
-print(frankie.account_balance)
+frankie.make_deposit(4000).make_deposit(2500).make_deposit(9800).make_withdrawal(1100).display_user_balance()
 
 
 #have second user make 2 deposits and 2 withdrawals
 #display balance
-lola.make_deposit(11000)
-lola.make_deposit(130500)
-lola.make_withdrawal(80000)
-lola.make_withdrawal(25000)
-print(lola.account_balance)
+lola.make_deposit(11000).make_deposit(130500).make_withdrawal(80000).make_withdrawal(25000).display_user_balance()
 
 
 #have third user make 1 deposit and 3 withdrawals
 #display balance
-lillian.make_deposit(578000)
-lillian.make_withdrawal(233000)
-print(lillian.account_balance)
+lillian.make_deposit(578000).make_withdrawal(233000).display_user_balance()
 
 
